@@ -14,6 +14,7 @@ import {
   signOutUserFailure,
 } from '../redux/user/userSlice'
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 export default function Profile() {
   const fileRef = useRef(null);
@@ -181,6 +182,9 @@ const handleSignOut = async () => {
         >
           {loading ? 'Loading...' : 'Update'}
         </button>
+        <Link className="bg-green-700 text-white rounded-lg uppercase hover:opacity-95 text-center p-3" to={"/create-listing"}>
+          Create Listing
+          </Link>
       </form>
       <div className="flex justify-between mt-5">
         <span onClick={handleDeleteUser} className="text-red-700 cursor-pointer">Delete Account</span>
